@@ -106,17 +106,24 @@ html {
     <script src="./final_files/modernizr.js"></script>
 
     <script>
+
+function getRandy(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function generateName() {
 
   var n1 = ['Time-traveling','Hipster','Dystopian','Celtic','Holy-Roman','Cold War-era','Turn of the century','Colonial','Puritan','Native-American','Neanderthal','Cold War','Post-modern','New Age','Renaissance','Martian','Byzantine','Persian','Wild West','Space','Slutty','Post-apocalyptic','8 Tentacled Space','Time-distorted','Napoleonic','Dark Age','Antiquity-era','Confederate','Wiccan','Revolutionary War-era','Cival War-era','Old Testament','Robin Hood\'s favorite','Bavarian','WW3-era','Intergalactic','Middle Age','Zombie Apocolypse','Alternate Dimension'];
 
   var n2 = ['Time Cop','Bar Tender','Knight','Head Shop Owner','Detective','Emperor','Sparkle Pidgeon','Burner','Ninja','Darkwad','Pirate','War Lord','Cowboy','Specialist','Porn Star','Cosmonaut','Nurse','Gypsy','Fire Fighter','Asshole','Voyeur','Inventor','Dental Hygienist','Ship Captain','Slumlord','Pimp','Man of Mystery','Witch Doctor','Gladiator'];
 
-  var w1 = n1[Math.floor((Math.random() * n1.length-1))];
-  var w2 = n2[Math.floor((Math.random() * n2.length-1))];
+
+
+  var w1 = n1[getRandy(0, n1.length)];
+  var w2 = n2[getRandy(0, n2.length)];
 
     var demo = document.getElementById("yourname");
-    demo.innerHTML = w1 + ' ' + w2;
+    demo.innerHTML = w1 +' '+w2;
 
     console.log('name is '+w1);
 }
